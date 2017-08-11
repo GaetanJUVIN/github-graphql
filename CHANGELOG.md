@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/karagenit/github-graphql/tree/HEAD)
 
-[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.0.0...HEAD)
+[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.1.0...HEAD)
+
+**Closed issues:**
+
+- Nil Default for Vars [\#6](https://github.com/karagenit/github-graphql/issues/6)
+
+## [v1.1.0](https://github.com/karagenit/github-graphql/tree/v1.1.0) (2017-08-11)
+[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.0.0...v1.1.0)
 
 **Closed issues:**
 
