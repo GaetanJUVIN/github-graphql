@@ -13,11 +13,11 @@ module Github
       @http = Net::HTTP.new(uri.host, uri.port)
       @http.use_ssl = true
 
-      @request = Net::HTTP.Post.new(uri)
+      @request = Net::HTTP::Post.new(uri)
       @request['Content-type'] = 'application/json'
 
-      this.token(token)
-      this.payload(query, vars)
+      token(token)
+      payload(query, vars)
     end
 
     def token(token)
@@ -25,9 +25,9 @@ module Github
     end
 
     def payload(query, vars)
-      payload['query'] = query
-      payload['variables'] = vars
-      @request.body = payload.to_json
+      @payload['query'] = query
+      @payload['variables'] = vars
+      @request.body = @payload.to_json
     end
 
     def query
