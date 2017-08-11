@@ -1,9 +1,10 @@
 #!/usr/bin/env ruby
 
 require 'github/graphql'
+require 'test/unit'
 
-nilhash = {}
-
-api = Github::GraphQL.new('test', nilhash, nilhash)
-
-puts api.query.inspect
+class TestQuery < Test::Unit::TestCase
+  def test_no_auth
+    assert_equal(Github::GraphQL.new(nil, nil, nil).query['message'], 'Bad credentials')
+  end
+end
