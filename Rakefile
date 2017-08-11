@@ -1,4 +1,4 @@
-task :default => [:clean, :build, :test, :install]
+task :default => [:clean, :build, :install, :test]
 
 task :build do
     sh "bundle install"
