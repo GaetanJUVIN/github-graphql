@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'github/graphql'
+require_relative '../lib/github/graphql.rb'
 require 'test/unit'
 
 class TestQuery < Test::Unit::TestCase
