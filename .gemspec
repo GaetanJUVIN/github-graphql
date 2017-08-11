@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
     s.homepage      = 'https://github.com/karagenit/github-graphql'
     s.author        = 'Caleb Smith'
     s.email         = 'karagenit@outlook.com'
-    s.files         = ['lib/github-graphql']
+    s.files         = ['lib/github/graphql.rb']
     s.require_paths = ['lib/']
     s.platform      = Gem::Platform::RUBY
 
