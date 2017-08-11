@@ -6,7 +6,7 @@ module Github
 
   # Used to Query the Github GraphQL API
   class GraphQL
-    def initialize(token, query, vars)
+    def initialize(token, query, vars = nil)
       @payload = {}
 
       uri = URI.parse('https://api.github.com/graphql')
@@ -24,7 +24,7 @@ module Github
       @request['Authorization'] = "bearer #{token}"
     end
 
-    def payload(query, vars)
+    def payload(query, vars = nil)
       @payload['query'] = query
       @payload['variables'] = vars
       @request.body = @payload.to_json
