@@ -1,5 +1,13 @@
 # Change Log
 
+## [Unreleased](https://github.com/karagenit/github-graphql/tree/HEAD)
+
+[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.0.0...HEAD)
+
+**Closed issues:**
+
+- Publish to Rubygems [\#2](https://github.com/karagenit/github-graphql/issues/2)
+
 ## [v1.0.0](https://github.com/karagenit/github-graphql/tree/v1.0.0) (2017-08-11)
 **Closed issues:**
 
