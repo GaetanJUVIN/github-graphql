@@ -15,7 +15,7 @@ task :clean do
 end
 
 task :test do
-    sh "rubocop lib/"
+    sh "rubocop lib/github"
 end
 
 task :publish do
