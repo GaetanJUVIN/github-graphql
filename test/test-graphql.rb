@@ -17,4 +17,8 @@ class TestQuery < Test::Unit::TestCase
     assert_raise(ArgumentError) { Github::GraphQL.new('', nil) }
   end
 
+  def test_blank_static
+    assert_equal(Github.query('', '')['message'], 'Bad credentials')
+  end
+
 end

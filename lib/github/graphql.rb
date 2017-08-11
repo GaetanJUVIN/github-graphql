@@ -37,4 +37,8 @@ module Github
       JSON.parse(response.body)
     end
   end
+
+  def self.query(token, query, vars = nil)
+    GraphQL.new(token, query, vars).query
+  end
 end
