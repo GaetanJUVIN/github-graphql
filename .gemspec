@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
     s.add_runtime_dependency     'json',                        '~> 2.1'
 
     s.add_development_dependency 'rubocop',                     '~> 0.49'
+    s.add_development_dependency 'rdoc',                        '~> 4.2'
     s.add_development_dependency 'bundler',                     '~> 1.15'
     s.add_development_dependency 'rake',                        '~> 12.0'
     s.add_development_dependency 'test-unit',                   '~> 3.2'

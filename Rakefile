@@ -3,6 +3,7 @@ task :default => [:clean, :build, :install, :test]
 task :build do
     sh "bundle install"
     sh "gem build .gemspec"
+    system "rdoc lib/"
 end
 
 task :install do
