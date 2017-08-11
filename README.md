@@ -17,18 +17,40 @@ Will fetch the `json` gem as a runtime dependency.
 ## Usage
 
 ```
-# Your script
+#!/usr/bin/env ruby
+
 require "github/graphql"
 
 api = Github::GraphQL.new(oauth_token, query_string, variables_hash)
 data = api.query
 ```
 
-Where `oauth_token` is your Github API Key, `query_string` is your GraphQL query as a string *(including newlines)*, and `variables_hash` is a hash array of all of the required variables (can be nil). Returns a hash array of the response data. 
+Where `oauth_token` is your Github API Key, `query_string` is your GraphQL query as a string *(including newlines)*, and `variables_hash` is a hash array of all of the required variables (optional argument). Returns a hash array of the response data. 
 
 Optionally, you can re-set either the key or the query/variables later on:
 
 ```
 api.token(token)
 api.payload(query_string, variables_hash)
+```
+
+### Using Basic Authentication
+
+Sometimes you'll want to connect to the API via Basic Authentication (i.e. username & password) instead of with an OAuth token, however the Github GraphQL API doesn't currently support this. It's fairly simple to do using the `octokit` gem:
+
+```
+#!/usr/bin/env ruby
+
+require "octokit"
+require "github/graphql"
+
+octoclient = Octokit::Client.new(:login => username, :password => password)
+auth = octoclient.create_authorization(:scopes => ["repo"], :note => "Test Script")
+
+# Use this to connect to the GraphQL API
+token = auth.attrs[:token]
+
+# Don't forget to either store or delete the token, so your script can be run again!
+IO.write('oauth.token', token)
+octoclient.delete_authorization(auth.attrs[:id])
 ```
