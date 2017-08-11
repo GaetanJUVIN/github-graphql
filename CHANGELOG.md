@@ -1,5 +1,16 @@
 # Change Log
 
+## [Unreleased](https://github.com/karagenit/github-graphql/tree/HEAD)
+
+[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.1.2...HEAD)
+
+**Closed issues:**
+
+- Exception Checking for Nils [\#7](https://github.com/karagenit/github-graphql/issues/7)
+
+## [v1.1.2](https://github.com/karagenit/github-graphql/tree/v1.1.2) (2017-08-11)
+[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.1.1...v1.1.2)
+
 ## [v1.1.1](https://github.com/karagenit/github-graphql/tree/v1.1.1) (2017-08-11)
 [Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.1.0...v1.1.1)
 
