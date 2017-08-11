@@ -16,7 +16,7 @@ end
 
 task :test do
     sh "rubocop lib/github"
-    sh "./test/example.rb"
+    sh "./test/test-graphql.rb"
 end
 
 task :publish do
