@@ -14,6 +14,22 @@ $ gem install github-graphql
 
 Will fetch the `json` gem as a runtime dependency.
 
+### Developers
+
+First, fork this repo on github, then:
+
+```
+$ git clone https://github.com/#{user}/github-graphql
+```
+
+To fetch development dependencies:
+
+```
+$ bundle install
+```
+
+This will download `rake`, `bundler`, `rubocop`, `test-unit`, and `github_changelog_generator`.
+
 ## Usage
 
 ```
