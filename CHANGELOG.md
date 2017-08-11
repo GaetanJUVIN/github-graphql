@@ -2,7 +2,22 @@
 
 ## [Unreleased](https://github.com/karagenit/github-graphql/tree/HEAD)
 
-[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.1.2...HEAD)
+[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.2.0...HEAD)
+
+**Implemented enhancements:**
+
+- Documentation [\#5](https://github.com/karagenit/github-graphql/issues/5)
+
+**Closed issues:**
+
+- Tests should Require Relative [\#11](https://github.com/karagenit/github-graphql/issues/11)
+
+## [v1.2.0](https://github.com/karagenit/github-graphql/tree/v1.2.0) (2017-08-11)
+[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.1.2...v1.2.0)
+
+**Implemented enhancements:**
+
+- Static Methods [\#9](https://github.com/karagenit/github-graphql/issues/9)
 
 **Closed issues:**
 
