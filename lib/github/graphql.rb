@@ -21,10 +21,12 @@ module Github
     end
 
     def token(token)
+      raise ArgumentError, 'Cannot have nil token!', caller if token.nil?
       @request['Authorization'] = "bearer #{token}"
     end
 
     def payload(query, vars = nil)
+      raise ArgumentError, 'Cannot have nil query!', caller if query.nil?
       @payload['query'] = query
       @payload['variables'] = vars
       @request.body = @payload.to_json
