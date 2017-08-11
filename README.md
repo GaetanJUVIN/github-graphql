@@ -37,11 +37,21 @@ This will download `rake`, `bundler`, `rubocop`, `test-unit`, and `github_change
 
 require "github/graphql"
 
-api = Github::GraphQL.new(oauth_token, query_string, variables_hash)
-data = api.query
+data = Github.query(oauth_token, query_string, variables_hash)
 ```
 
 Where `oauth_token` is your Github API Key, `query_string` is your GraphQL query as a string *(including newlines)*, and `variables_hash` is a hash array of all of the required variables (optional argument). Returns a hash array of the response data. 
+
+Alternatively, you can construct a `GraphQL` object to make repeated queries:
+
+```
+#!/usr/bin/env ruby
+
+require "github/graphql"
+
+api = Github::GraphQL.new(oauth_token, query_string, variables_hash)
+data = api.query
+```
 
 Optionally, you can re-set either the key or the query/variables later on:
 
