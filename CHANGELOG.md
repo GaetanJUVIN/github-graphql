@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/karagenit/github-graphql/tree/HEAD)
 
-[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.2.0...HEAD)
+[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.2.1...HEAD)
+
+**Closed issues:**
+
+- Rename Library Files [\#13](https://github.com/karagenit/github-graphql/issues/13)
+
+## [v1.2.1](https://github.com/karagenit/github-graphql/tree/v1.2.1) (2017-08-11)
+[Full Changelog](https://github.com/karagenit/github-graphql/compare/v1.2.0...v1.2.1)
 
 **Implemented enhancements:**
 
