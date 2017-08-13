@@ -3,6 +3,7 @@
 Ruby Library for Making Queries to the Github GraphQL API
 
 [![Travis CI](https://img.shields.io/travis/karagenit/github-graphql.svg?style=flat-square)](https://travis-ci.org/karagenit/github-graphql)
+[![Code Climate](https://img.shields.io/codeclimate/github/karagenit/github-graphql.svg?style=flat-square)](https://codeclimate.com/github/karagenit/github-graphql)
 [![Gem Version](https://img.shields.io/gem/v/github-graphql.svg?style=flat-square)](https://rubygems.org/gems/github-graphql)
 [![Gem](https://img.shields.io/gem/dt/github-graphql.svg?style=flat-square)](https://rubygems.org/gems/github-graphql)
 
