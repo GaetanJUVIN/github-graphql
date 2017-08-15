@@ -38,6 +38,8 @@ This will download `rake`, `bundler`, `rubocop`, `test-unit`, and `github_change
 
 require "github/graphql"
 
+data = Github.query(oauth_token, query_string)
+### OR ###
 data = Github.query(oauth_token, query_string, variables_hash)
 ```
 
@@ -50,7 +52,10 @@ Alternatively, you can construct a `GraphQL` object to make repeated queries:
 
 require "github/graphql"
 
+api = Github::GraphQL.new(oauth_token, query_string)
+### OR ###
 api = Github::GraphQL.new(oauth_token, query_string, variables_hash)
+
 data = api.query
 ```
 
@@ -58,6 +63,9 @@ Optionally, you can re-set either the key or the query/variables later on:
 
 ```
 api.token(token)
+
+api.payload(query_string)
+### OR ###
 api.payload(query_string, variables_hash)
 ```
 
