@@ -48,7 +48,7 @@ Github.query(oauth_token, query_string)
 #=> {"data"=>{"user"=>{"name"=>"Caleb Smith"}}}
 ```
 
-For clarity, you can use Inline Literals for the query string:
+> **Tip:** For clarity, you can use Inline Literals for the query string:
 
 ```
 query = %{
@@ -62,14 +62,26 @@ query = %{
 
 *[More on Ruby Escape Strings](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_%_Notation)*
 
+### GraphQL Variables
+
 To pass variables to your query:
 
 ```
+query = %{
+    query ($username:String!) {
+        user(login: $username) {
+            name
+        }
+    }
+}
+
 variables = { username: "karagenit" }
 
 Github.query(oauth_token, query_string, variables_hash)
 #=> {"data"=>{"user"=>{"name"=>"Caleb Smith"}}}
 ```
+
+### The Github::GraphQL Object
 
 Alternatively, you can construct a `GraphQL` object to make repeated queries:
 
