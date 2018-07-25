@@ -38,12 +38,38 @@ This will download `rake`, `bundler`, `rubocop`, `test-unit`, and `github_change
 
 require "github/graphql"
 
-data = Github.query(oauth_token, query_string)
-### OR ###
-data = Github.query(oauth_token, query_string, variables_hash)
+# Github API Key
+oauth_token = "ANLEOU1234LKFDS"
+
+# GraphQL Query
+query = 'query { user (login: "karagenit") { name } }'
+
+Github.query(oauth_token, query_string)
+#=> {"data"=>{"user"=>{"name"=>"Caleb Smith"}}}
 ```
 
-Where `oauth_token` is your Github API Key, `query_string` is your GraphQL query as a string *(including newlines)*, and `variables_hash` is a hash array of all of the required variables (optional argument). Returns a hash array of the response data. 
+For clarity, you can use Inline Literals for the query string:
+
+```
+query = %{
+    query { 
+        user (login: "karagenit") {
+            name
+        }
+    }
+}
+```
+
+*[More on Ruby Escape Strings](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_%_Notation)*
+
+To pass variables to your query:
+
+```
+variables = { username: "karagenit" }
+
+Github.query(oauth_token, query_string, variables_hash)
+#=> {"data"=>{"user"=>{"name"=>"Caleb Smith"}}}
+```
 
 Alternatively, you can construct a `GraphQL` object to make repeated queries:
 
@@ -53,10 +79,11 @@ Alternatively, you can construct a `GraphQL` object to make repeated queries:
 require "github/graphql"
 
 api = Github::GraphQL.new(oauth_token, query_string)
-### OR ###
+
 api = Github::GraphQL.new(oauth_token, query_string, variables_hash)
 
-data = api.query
+api.query
+#=> {"data"=>{"user"=>{"name"=>"Caleb Smith"}}}
 ```
 
 Optionally, you can re-set either the key or the query/variables later on:
@@ -65,7 +92,7 @@ Optionally, you can re-set either the key or the query/variables later on:
 api.token(token)
 
 api.payload(query_string)
-### OR ###
+
 api.payload(query_string, variables_hash)
 ```
 
