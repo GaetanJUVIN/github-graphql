@@ -17,7 +17,7 @@ module Github
     #
     # With raise an ArgumentError if either token or query are nil.
     #
-    def initialize(token, query, vars = nil)
+    def initialize(token)
       @payload = {}
 
       uri = URI.parse('https://api.github.com/graphql')
@@ -28,7 +28,7 @@ module Github
       @request['Content-type'] = 'application/json'
 
       token(token)
-      payload(query, vars)
+#      payload(query, vars)
     end
 
     ##
@@ -58,7 +58,8 @@ module Github
     #
     # Returns a ruby hash array of the response from Github.
     #
-    def query
+    def query(query, vars = nil)
+      payload(query, vars)
       response = @http.request(@request)
       JSON.parse(response.body)
     end
@@ -72,6 +73,7 @@ module Github
   # Will raise an ArgumentException if either token or query are nil.
   #
   def self.query(token, query, vars = nil)
-    GraphQL.new(token, query, vars).query
+    api = GraphQL.new(token)
+    api.query(query, vars)
   end
 end
