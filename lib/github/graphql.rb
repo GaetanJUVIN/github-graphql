@@ -37,8 +37,6 @@ module Github
     # Will raise an ArgumentError if token is nil
     #
     def token(token)
-      raise ArgumentError, 'Invalid Token', caller unless
-        token =~ /\A[A-Za-z0-9]{40,40}\z/
       @request['Authorization'] = "bearer #{token}"
     end
 
